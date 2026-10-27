@@ -1,0 +1,28 @@
+{
+  "name": "workspace",
+  "private": true,
+  "scripts": {
+    "build": "turbo build",
+    "lint": "turbo lint",
+    "dev": "FORCE_COLOR=1 turbo dev",
+    "format": "prettier --ignore-path .gitignore --write .",
+    "format:check": "prettier --ignore-path .gitignore --check ."
+  },
+  "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^4.3.0",
+    "prettier": "2.8.8",
+    "turbo": "^1.13.4"
+  },
+  "workspaces": [
+    "app",
+    "pkg/*"
+  ],
+  "prettier": {
+    "proseWrap": "always",
+    "importOrder": [
+      "^[./]"
+    ],
+    "importOrderSeparation": true,
+    "importOrderSortSpecifiers": true
+  }
+}
